@@ -8,6 +8,7 @@ import darkTheme from './config/theme/darkTheme';
 import lightTheme from './config/theme/lightTheme';
 
 import  ThemeProvider  from '@mui/material/styles/ThemeProvider';
+
 function App() {
   const [dark, setdark] = useState(false)
   return (
