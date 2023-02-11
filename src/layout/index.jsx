@@ -2,12 +2,12 @@ import Grid from '@mui/material/Unstable_Grid2'
 
 import React from 'react'
 import CustomAppBar from '../components/CustomAppBar'
-function index({ children }) {
+function Layout({ children }) {
     return (
         <>
-            <Grid container padding={2}>
+            <Grid container padding={2} >
                 <CustomAppBar />
-                <Grid py={5}>
+                <Grid xs={12} py={5}>
                     {children}
                 </Grid>
             </Grid>
@@ -15,4 +15,4 @@ function index({ children }) {
     )
 }
 
-export default index
+export default Layout

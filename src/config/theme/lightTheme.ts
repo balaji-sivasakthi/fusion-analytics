@@ -5,12 +5,13 @@ export default  createTheme({
     typography:{
         fontFamily:"inter"
     },
+    
     palette:{
         primary:{
             main:grey[100]
         },
-        background:{
-            default:"#000"
+        background: {
+            default:"#f1f1f1"
         },
     },
     components:{
@@ -33,6 +34,7 @@ export default  createTheme({
         MuiCard:{
             styleOverrides:{
                 root:{
+                    borderRadius:5,
                     boxShadow:"none",
                     borderWidth:'1px',
                     borderStyle:"solid",

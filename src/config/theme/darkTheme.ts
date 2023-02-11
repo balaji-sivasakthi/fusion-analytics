@@ -7,7 +7,7 @@ export default createTheme({
             main:grey[100]
         },
         background:{
-            default:"#000"
+            default:blue[200]
         }
     },
     components:{
