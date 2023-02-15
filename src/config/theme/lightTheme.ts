@@ -40,7 +40,22 @@ export default  createTheme({
                     borderStyle:"solid",
                     borderColor:"#3a35411f",
                     backgroundColor:"#fff",
-
+                    display: "flex",
+                    flexDirection: "column",
+                }
+            }
+        },
+        MuiCardContent:{
+styleOverrides:{
+    root:{
+        marginTop:"auto"
+    }
+}
+        },
+        MuiCardActions:{
+            styleOverrides:{
+                root:{
+                   marginTop:"auto"
                 }
             }
         }

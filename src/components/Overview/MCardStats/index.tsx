@@ -12,16 +12,17 @@ interface IMCardStats {
   path: String | any,
   value: any,
   icon: React.ReactNode,
+  style?:any,
   children?: any
 }
 
 
-function MCardStats({ title, icon, value, path, children }: IMCardStats) {
+function MCardStats({ title, icon, value, path, children,style }: IMCardStats) {
 
   const navigate = useNavigate()
 
   return (
-    <Card sx={{ width: "100%" }}>
+    <Card sx={{ width: "100%" ,...style}}>
       <CardHeader title={title} />
       <CardContent>
         {children}
