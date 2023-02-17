@@ -12,6 +12,8 @@ import FootFall from './views/app/FootFall';
 import Groups from './views/app/Group';
 import Deploy from './views/app/Deploy';
 import Settings from './views/app/settings';
+import Test from './views/Test'
+
 import { CssBaseline } from '@mui/material';
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
           <Route path={"/app/deploy"} element={<Deploy />} />
           <Route path={"/app/settings"} element={<Settings />} />
           <Route path={"/login"} element={<Login />} />
+          <Route path={"/test"} element={<Test />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

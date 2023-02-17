@@ -105,25 +105,25 @@ export default function CustomizedTabs() {
   const option =
 
   {
-      options: {
-          chart: {
-              id: "basic-bar"
-          },
-          plotOptions: {
-              bar: {
-                  horizontal: true
-              }
-          },
-          xaxis: {
-              categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-          }
+    options: {
+      chart: {
+        id: "basic-bar"
       },
-      series: [
-          {
-              name: "series-1",
-              data: [30, 40, 45, 50, 49, 60, 70, 91]
-          }
-      ]
+      plotOptions: {
+        bar: {
+          horizontal: true
+        }
+      },
+      xaxis: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+      }
+    },
+    series: [
+      {
+        name: "series-1",
+        data: [30, 40, 45, 50, 49, 60, 70, 91]
+      }
+    ]
   }
 
 
@@ -133,7 +133,10 @@ export default function CustomizedTabs() {
 
   return (
     <Box mt={2} sx={{ width: '100%' }}>
-      <Box sx={{ bgcolor: '#fff' }}>
+
+      <img width={"100%"} src="http://192.168.0.206:5000/video" />
+
+      {/* <Box sx={{ bgcolor: '#fff' }}>
         <AntTabs value={value} onChange={handleChange} aria-label="ant example">
           <AntTab icon={<IoFootsteps size={28} />} label="Footfall & Conversion" />
           <AntTab icon={<BiGroup size={28} />} label="Demographic" />
@@ -157,7 +160,7 @@ export default function CustomizedTabs() {
         <TabPanel value={value} index={2}>
           Item Three
         </TabPanel>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
