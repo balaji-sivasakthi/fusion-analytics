@@ -17,7 +17,7 @@ interface IMCardStats {
 }
 
 
-function MCardStats({ title, icon, value, path, children,style }: IMCardStats) {
+function ChartCard({ title, icon, value, path, children,style }: IMCardStats) {
 
   const navigate = useNavigate()
 
@@ -28,10 +28,10 @@ function MCardStats({ title, icon, value, path, children,style }: IMCardStats) {
         {children}
       </CardContent>
       <CardActions>
-        <Button   sx={{color:"deepskyblue"}} onClick={()=>navigate(path)}>View more info</Button>
+        {/* <Button   sx={{color:"deepskyblue"}} onClick={()=>navigate(path)}>View more info</Button> */}
       </CardActions>
     </Card>
   )
 }
 
-export default MCardStats
+export default ChartCard

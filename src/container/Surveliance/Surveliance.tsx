@@ -1,13 +1,13 @@
 import { Card, CardContent, CardHeader, Grid, Tabs, Typography } from '@mui/material'
 import React from 'react'
-import OverviewCard from '../../components/Overview/OverviewCard'
+import RecentCard from '../../components/Surveliance/RecentCard'
 
-function Overview() {
+function Surveliance() {
     return (
         <Grid item xs={12} lg={6}>
-           <OverviewCard/>
+           <RecentCard/>
         </Grid>
     )
 }
 
-export default Overview
+export default Surveliance

@@ -7,32 +7,31 @@ import { IconType } from 'react-icons/lib'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 
-interface ISCardStats {
+interface IMCardStats {
   title: String,
   path: String | any,
   value: any,
-  icon: React.ReactNode
+  icon: React.ReactNode,
+  style?:any,
+  children?: any
 }
 
 
-function SCardStats({ title, icon, value, path }: ISCardStats) {
+function Charts({ title, icon, value, path, children,style }: IMCardStats) {
 
   const navigate = useNavigate()
 
   return (
-    <Card sx={{ width: "100%" }}>
+    <Card sx={{ width: "100%" ,...style}}>
       <CardHeader title={title} />
       <CardContent>
-        <Box flex={1}  flexDirection={"row"}>
-            {icon}
-          <Typography sx={{display:"inline"}} variant='h4'> {value}</Typography>
-        </Box>
+        {children}
       </CardContent>
       <CardActions>
-        <NavLink  to={path}/>
+        <Button   sx={{color:"deepskyblue"}} onClick={()=>navigate(path)}>View more info</Button>
       </CardActions>
     </Card>
   )
 }
 
-export default SCardStats
+export default MCardStats
