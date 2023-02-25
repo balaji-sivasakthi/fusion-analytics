@@ -4,6 +4,7 @@
         "footfall":"FootFall",
         "group":"Group & Demographics",
         "delopy":"Deployment & Operations",
+        "surveliance":"Surveiliance Dashboard",
         "settings":"Setting"
     }
 }

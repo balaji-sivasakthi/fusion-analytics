@@ -30,6 +30,12 @@ export default  [
         Icons:<BiSliderAlt/>
     },
     {
+        id:"Surveiliance Dashboard",
+        label:"menu.surveliance",
+        path:'/app/surveiliance',
+        Icons:<MdOutlineSettings/>
+    },
+     {
         id:"Setting",
         label:"menu.settings",
         path:'/app/settings',

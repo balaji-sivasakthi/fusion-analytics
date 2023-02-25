@@ -15,6 +15,7 @@ import Settings from './views/app/settings';
 import Test from './views/Test'
 
 import { CssBaseline } from '@mui/material';
+import Surveiliance from './views/app/Surveiliance';
 
 function App() {
   const [dark, setdark] = useState(false)
@@ -28,6 +29,7 @@ function App() {
           <Route path={"/app/footfall"} element={<FootFall />} />
           <Route path={"/app/group"} element={<Groups />} />
           <Route path={"/app/deploy"} element={<Deploy />} />
+          <Route path={"/app/surveiliance"} element={<Surveiliance />} />
           <Route path={"/app/settings"} element={<Settings />} />
           <Route path={"/login"} element={<Login />} />
           <Route path={"/test"} element={<Test />} />

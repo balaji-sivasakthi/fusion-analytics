@@ -1,15 +1,15 @@
 import { Box, Card, CardContent, CardHeader, Typography } from '@mui/material'
 import React from 'react'
-import OverviewTabs from './OverviewTabs'
+
 
 function OverviewCard() {
   return (
     <Card>
-    <CardHeader title="Overview">
+    <CardHeader title="Recent Captures">
     </CardHeader>
     <CardContent>
-        <Typography>Based on selected stores</Typography>
-        <OverviewTabs />
+        <Typography></Typography>
+        
     </CardContent>  
 </Card>
   )
