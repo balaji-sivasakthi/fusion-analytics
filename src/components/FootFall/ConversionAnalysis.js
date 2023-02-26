@@ -47,7 +47,7 @@ function ConversionAnalysis() {
 
 
     return (
-        <Card>
+        <Card sx={{height:"100%"}}>
 
             <CardHeader title={"ConversionAnalysis"} />
             <Typography px={2}>Based on selected Stores</Typography>

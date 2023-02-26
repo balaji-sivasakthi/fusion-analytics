@@ -11,7 +11,7 @@ export default  createTheme({
             main:grey[100]
         },
         background: {
-            default:"#f1f1f1"
+            default:"#F5F7FF"
         },
     },
     components:{

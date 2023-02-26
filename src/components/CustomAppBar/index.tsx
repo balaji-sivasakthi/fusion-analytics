@@ -1,4 +1,4 @@
-import { AppBar, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Tab, Tabs, Toolbar } from '@mui/material'
+import { AppBar, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Tab, Tabs, Toolbar, Typography } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Box } from '@mui/system'
 import React from 'react'
@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next'
 import menu from '../../constants/menu'
 import { blue } from '@mui/material/colors';
 import { useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/svg/logo.svg'
 function CustomAppBar() {
   const { t } = useTranslation()
   const location = useLocation()
@@ -14,7 +15,10 @@ function CustomAppBar() {
   const navigate=useNavigate()
   return (
     <AppBar position='static'>
-      <Toolbar>
+      <Toolbar
+      >
+        <img  src={logo} width={"50"} alt="" />
+        <Typography ml={1}  fontWeight={"bold"} mr={5}>Fusion Analytics </Typography>
         {menu.map((list,index) => (
           <ListItemButton 
           key={index}

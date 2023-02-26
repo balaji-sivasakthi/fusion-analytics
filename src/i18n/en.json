@@ -1,10 +1,10 @@
 {
     "menu":{
-        "overview":"Overview",
-        "footfall":"FootFall",
-        "group":"Group & Demographics",
-        "delopy":"Deployment & Operations",
-        "surveliance":"Surveiliance Dashboard",
+        "surveliance":"Surveiliance",
+        "overview":"Alerts",
+        "footfall":"Analytics",
+        "group":"Empolyee Attendance",
+        "delopy":"User Jorney",
         "settings":"Setting"
     }
 }

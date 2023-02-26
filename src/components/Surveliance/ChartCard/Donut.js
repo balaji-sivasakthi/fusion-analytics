@@ -3,44 +3,21 @@ import { Card, CardHeader, CardContent, Typography } from '@mui/material'
 import Chart from "react-apexcharts";
 import Popup from '../../Popup'
 
-
-function generateData(count, yrange) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-      var x = (i + 1).toString();
-      var y =
-      Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-    
-      series.push({
-        x: x,
-        y: y
-      });
-      i++;
-    }
-    return series;
-    }
-
 function Donut() {
    
-   
-    
+      
     const options = {
           
-      series: [44, 55, 41, 17, 15],
+      series: [20, 20, 20, 20],
       options: {
+        labels: ['User Entry', 'Vehicle Entry', 'User Exit', 'Vehicle Exit'],
         chart: {
           type: 'donut',
-        },
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            
-            legend: {
-              position: 'bottom'
-            }
+          zoom: {
+            enabled: false
           }
-        }]
+        },
+       
       },
     
     };
@@ -48,18 +25,16 @@ function Donut() {
 
     const [open, setopen] = useState(true)
     return (
-        <Card>
+        <Card sx={{height:"100%"}}>
 
-            <CardHeader title={"Donut"} />
+            <CardHeader title={"Entry/Exit"} />
             <Typography px={2}>Based on selected Stores</Typography>
             <CardContent>
                 <Chart
-                    options={options?.options}
+                    options={options.options}
                     series={options.series}
                     type="donut"
-                    width={"100%"}
-                    height={"400px"}
-                    
+                    width={"100%"}          
                 />
                 <Popup open={open} handleClose={setopen}/>
             </CardContent>

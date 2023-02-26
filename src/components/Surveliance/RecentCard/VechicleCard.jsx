@@ -9,11 +9,15 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
 import Grid from '@mui/material/Grid'
-import logo from '../../../assets/img/person.jpeg';
+
+import IconButton from '@mui/material/IconButton';
+import { TbDeviceCctv } from "react-icons/tb";
+import { BiTimer, BiX } from "react-icons/bi";
+import logo from '../../../assets/img/car.jpeg';
 import { IoTimer } from 'react-icons/io5';
 import { GrLocation } from 'react-icons/gr';
 
-function HeadCount() {
+function VechicleCard() {
 
     const [progress, setProgress] = React.useState(0);
 
@@ -36,11 +40,11 @@ function HeadCount() {
 
     return (
        <Card sx={{marginBottom:"10px"}}>
-        <CardHeader title="Face Recognition"/>
+        <CardHeader title="Vechicle Recognition"/>
         <CardContent>
             <Grid spacing={2}  container>
                 <Grid  xs={6} item>
-                    <Typography mb={2}><GrLocation/> IPC1</Typography>
+                    <Typography mb={2}><GrLocation/> Channel033</Typography>
                     <Box width={"100%"}>
                         <img width={"50%"} src={logo} alt="" />
                     <img src={logo} width={"50%"} alt="" />
@@ -48,10 +52,10 @@ function HeadCount() {
                     
                 </Grid>
                 <Grid xs={6} item>
-                    <Typography mb={2}> <IoTimer/> 2023-02-27</Typography>
-                    <Typography variant='h5'>Jon Snow</Typography>
-                    <Typography mb={2} >Watch List</Typography>
-                    <Typography  display={"inline"} px={2} py={.7} sx={{background:"black",color:"#fff",borderRadius:"5px"}}># Middle aged</Typography>
+                    <Typography mb={2}> <IoTimer/> 2023-02-26</Typography>
+                    <Typography variant='h5'>TN 32 AW 8082</Typography>
+                    <Typography >Nishan</Typography>
+                    <Typography >Red</Typography>
                 </Grid>
             </Grid>
         </CardContent>
@@ -59,4 +63,4 @@ function HeadCount() {
     )
 }
 
-export default HeadCount
+export default VechicleCard

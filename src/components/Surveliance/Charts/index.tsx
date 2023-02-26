@@ -34,4 +34,4 @@ function Charts({ title, icon, value, path, children,style }: IMCardStats) {
   )
 }
 
-export default MCardStats
+export default Charts
