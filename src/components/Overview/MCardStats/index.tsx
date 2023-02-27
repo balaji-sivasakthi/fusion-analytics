@@ -22,7 +22,7 @@ function MCardStats({ title, icon, value, path, children,style }: IMCardStats) {
   const navigate = useNavigate()
 
   return (
-    <Card sx={{ width: "100%" ,...style}}>
+    <Card sx={{ width: "100%" ,...style,height:"100%"}}>
       <CardHeader title={title} />
       <CardContent>
         {children}

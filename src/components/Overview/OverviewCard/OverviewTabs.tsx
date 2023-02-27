@@ -134,7 +134,7 @@ export default function CustomizedTabs() {
   return (
     <Box mt={2} sx={{ width: '100%' }}>
 
-      <img width={"100%"} src="http://192.168.0.206:5000/video" />
+      {/* <img width={"100%"} src="http://192.168.0.206:5000/video" /> */}
 
       {/* <Box sx={{ bgcolor: '#fff' }}>
         <AntTabs value={value} onChange={handleChange} aria-label="ant example">

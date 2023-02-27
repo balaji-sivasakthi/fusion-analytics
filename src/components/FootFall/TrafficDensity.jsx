@@ -158,7 +158,7 @@ function TrafficDensity() {
     }
 
     return (
-        <Card>
+        <Card sx={{height:"100%"}}>
 
             <CardHeader title={"TrafficDensity"} />
             <Typography px={2}>Footfall</Typography>

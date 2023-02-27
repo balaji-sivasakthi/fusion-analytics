@@ -9,7 +9,7 @@ function OverviewCard() {
     </CardHeader>
     <CardContent>
         <Typography>Based on selected stores</Typography>
-        <OverviewTabs />
+      
     </CardContent>  
 </Card>
   )
