@@ -10,6 +10,7 @@ import stopwatch from '../../assets/img/stopwatch.png';
 import ChartCard from '../../components/Surveliance/ChartCard';
 import Donut from '../../components/Surveliance/ChartCard/Donut';
 import LineChart from '../../components/Surveliance/ChartCard/LineChart';
+
 function MediumStats() {
  const MData = [
         { title: "Total FootFall", icon: <GiFootprint size={32} color={"deepskyblue"} />, value: "1200", path: '/' },
@@ -22,10 +23,10 @@ function MediumStats() {
             {/* First half */}
             <Grid container spacing={2} item xs={12} lg={6}>
                 <Grid xs={12} lg={6} item >
-                    <Donut />
+                    {/* <Donut /> */}
                 </Grid>
                 <Grid xs={12} lg={6} item >
-                <MCardStats title={MData[3].title} icon={MData[3].icon} value={MData[3].value} path={MData[3].path} style={{height:"370px"}} >
+                {/* <MCardStats title={MData[3].title} icon={MData[3].icon} value={MData[3].value} path={MData[3].path} style={{height:"370px"}} >
                         <Grid container>
                             <Grid xs={6} item>
                                 <GrRestroomMen size={32} style={{color:"red"}} />
@@ -45,10 +46,10 @@ function MediumStats() {
                                 <Typography  variant='h6'>8 Mins</Typography>
                             </Grid>
                         </Grid>
-                    </MCardStats>
+                    </MCardStats>    */}
                 </Grid>
                 <Grid xs={12} lg={12} item >
-                <LineChart />
+                {/* <LineChart /> */}
                 </Grid>
 
             </Grid>
