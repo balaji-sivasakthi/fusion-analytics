@@ -60,7 +60,7 @@ function HeadCount({ data }: { data: any }) {
                         <Button variant='contained'>View</Button>
                     </Grid>
                 </Grid>
-                <Popup open={true} handleClose={setopen}/>
+                {/* <Popup open={true} handleClose={setopen}/> */}
             </CardContent>
         </Card>
     )
