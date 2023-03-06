@@ -11,13 +11,8 @@ function SurvelianceContainer() {
   
   return (
     <Grid rowSpacing={1} container >
-
-      {/* Small Static Container */}
-      <SmallStats/>
-
       {/* MediumCard Static Container */}
       <MediumStats/>      
-        
     </Grid>
   )
 }

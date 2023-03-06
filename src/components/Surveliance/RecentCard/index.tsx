@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Typography } from '@mui/material'
+import { Box, Card, CardContent, CardHeader, List, Typography } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import HeadCount from './HeadCount'
@@ -23,29 +23,30 @@ function RecentCard() {
   }, [])
   
   return (
-    <Card  sx={{height:"100%"}}>
+    <Card  sx={{height:"725px"}}>
     <CardHeader title="Recent Captures">
     </CardHeader>
     <CardContent style={{alignItems:"start"}}>
        
         <Typography></Typography>
 
-        <Swiper
-        direction='vertical'
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper:any) => console.log(swiper)}
-    >
-      {data?.map(result=>(
-          <SwiperSlide>
-            <HeadCount data={result}/>
-          </SwiperSlide>
-        ))}
-    
-   
-     
-    </Swiper>
+    <List sx={{ width: '100%',
+        
+        bgcolor: 'background.paper',
+        // position: 'relative',
+        overflow: 'auto',
+        maxHeight: "620px",
+        "::-webkit-scrollbar":{
+          display:"none"
+        },
+        '& ul': { padding: 0 },  }}>
+
+    {data?.map(result=>(
+          
+          <HeadCount data={result}/>
+      ))}
+  
+    </List>
         {/* <HeadCount/>
         <VechicleCard/> */}
         

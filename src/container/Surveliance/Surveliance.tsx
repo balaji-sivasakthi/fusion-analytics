@@ -4,7 +4,7 @@ import RecentCard from '../../components/Surveliance/RecentCard'
 
 function Surveliance() {
     return (
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={3}>
            <RecentCard/>
         </Grid>
     )

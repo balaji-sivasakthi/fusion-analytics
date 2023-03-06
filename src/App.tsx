@@ -6,7 +6,7 @@ import Login from './views/auth/Login';
 import darkTheme from './config/theme/darkTheme';
 import lightTheme from './config/theme/lightTheme';
 
-import  ThemeProvider  from '@mui/material/styles/ThemeProvider';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import Overview from './views/app/Overview';
 import FootFall from './views/app/FootFall';
 import Groups from './views/app/Group';
@@ -16,28 +16,30 @@ import Test from './views/Test'
 
 import { CssBaseline } from '@mui/material';
 import Surveiliance from './views/app/Surveiliance';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
   const [dark, setdark] = useState(false)
   return (
-    <ThemeProvider theme={dark?darkTheme:lightTheme}>
-      <CssBaseline/>
-      <BrowserRouter>
-        <Routes>
-          <Route path={"/"} element={<Overview />} />
-          <Route path={"/app/overview"} element={<Overview />} />
-          <Route path={"/app/footfall"} element={<FootFall />} />
-          <Route path={"/app/group"} element={<Groups />} />
-          <Route path={"/app/deploy"} element={<Deploy />} />
-          <Route path={"/app/surveiliance"} element={<Surveiliance />} />
-          <Route path={"/app/settings"} element={<Settings />} />
-          <Route path={"/login"} element={<Login />} />
-          <Route path={"/test"} element={<Test />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-
-  );
+    <Provider store={store}>
+      <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+        <CssBaseline />
+        <BrowserRouter>
+          <Routes>
+            <Route path={"/"} element={<Overview />} />
+            <Route path={"/app/overview"} element={<Overview />} />
+            <Route path={"/app/footfall"} element={<FootFall />} />
+            <Route path={"/app/group"} element={<Groups />} />
+            <Route path={"/app/deploy"} element={<Deploy />} />
+            <Route path={"/app/surveiliance"} element={<Surveiliance />} />
+            <Route path={"/app/settings"} element={<Settings />} />
+            <Route path={"/login"} element={<Login />} />
+            <Route path={"/test"} element={<Test />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>);
 }
 
 export default App;

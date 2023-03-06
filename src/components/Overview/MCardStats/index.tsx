@@ -28,7 +28,7 @@ function MCardStats({ title, icon, value, path, children,style }: IMCardStats) {
         {children}
       </CardContent>
       <CardActions>
-        <Button   sx={{color:"deepskyblue"}} onClick={()=>navigate(path)}>View more info</Button>
+        <Button variant='contained' onClick={()=>navigate(path)}>View more info</Button>
       </CardActions>
     </Card>
   )

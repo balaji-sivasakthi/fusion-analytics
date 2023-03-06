@@ -21,6 +21,7 @@ const style: any = {
 };
 
 function Popup({ open,handleClose }: { open: any,handleClose:any }) {
+    
     return (
         <div>
             <Modal
