@@ -10,19 +10,38 @@ import { GiCancel } from 'react-icons/gi'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch } from '../../redux/store'
 import { closeModel } from '../../redux/surveillance/recentCaptureModelSlice'
+import { styled } from "@mui/material/styles";
+import lightTheme from '../../config/theme/lightTheme'
+import { Theme } from '@mui/system'
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 
 const style: any = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 800,
+    width: 1300,
     bgcolor: '#F5F7FF',
     outline: "none",
     borderRadius: '5px',
     boxShadow: 24,
     p: 4,
 };
+
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 10,
+    borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+        // backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+        backgroundColor: '#e6e6fa',
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+        borderRadius: 5,
+        // backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
+        backgroundColor: '#ff0000',
+    },
+}));
 
 function Popup() {
     const dispatch = useDispatch<AppDispatch>();
@@ -31,10 +50,10 @@ function Popup() {
     const handleClose = () => {
         dispatch(closeModel())
     }
+
     return (
         <div>
             <Modal
-
                 open={isOpen}>
                 <Box sx={style}>
                     <Box display={"flex"} justifyContent="end">
@@ -45,28 +64,50 @@ function Popup() {
                             }}
                             onClick={handleClose} variant='contained'>Close</Button>
                     </Box>
-                    <Box my={2} height={300} sx={{ backgroundColor: "grey" }}>
-                        <img height={"100%"} width={"100%"} src={"http://192.168.0.104/" + data?.top1?.faceImageURL} alt="" />
-                    </Box>
-                    <Box >
 
+                    <Box >
                         <Typography >{data?.top1?.searchScore}% Match</Typography>
                     </Box>
-                    <Box mt={2} display={"flex"} justifyContent="space-between" height={100}>
-                        <Box >
-                            <Typography >Person Name: {data?.top1?.description}</Typography>
-                            <Typography >Person Age: {data?.faceAttr?.age}</Typography>
-                        </Box>
-                        <Box>
-                            <Typography >Person Group: {data?.top1?.alertGroup.map((e: any) => `${e.groupName}`)}</Typography>
-                            <Typography >Stranger: {data?.stranger ? "This is a stranger" : "This is not a stranger"}</Typography>
-                        </Box>
-                        <Box>
-                            <Typography >Capture On: {data?.channelName}</Typography>
-                            <Typography >Capture At: {new Date(data?.timestamp).toLocaleString()}</Typography>
-                        </Box>
-                    </Box>
+                    <Grid height={400} spacing={10} container mb={10}>
+                        <Grid item spacing={5} container lg={8} >
+                            <Grid item lg={6}>
+                                <img height={"100%"} width={"100%"} src={"http://192.168.0.104" + data?.captureFullImageURL} alt="" />
+                            </Grid>
+                            <Grid item lg={6} container>
+                                <Grid item lg={6}>
+                                    <img height={"100%"} width={"100%"} src={"http://192.168.0.104" + data?.captureImageURL} alt="" />
+                                </Grid>
+                                <Grid item lg={6}>
+                                    <img height={"100%"} width={"100%"} src={"http://192.168.0.104" + data?.top1?.faceImageURL} alt="" />
+                                </Grid>
+                                <Grid container item lg={12} mt={2}>
+                                    <Grid item lg={9}>
+                                        <BorderLinearProgress color='success' variant="determinate" value={50} />
+                                    </Grid>
+                                    <Grid item lg={2} ml={2}>
+                                        {data?.top1?.searchScore}%
+                                    </Grid>
 
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
+                        <Grid item lg={4}>
+                            <Box >
+                                <Typography >Person Name: {data?.top1?.description}</Typography>
+                                <Typography >Person Age: {data?.faceAttr?.age}</Typography>
+                            </Box>
+                            <Box>
+                                <Typography >Person Group: {data?.top1?.alertGroup.map((e: any) => `${e.groupName}`)}</Typography>
+                                <Typography >Stranger: {data?.stranger ? "This is a stranger" : "This is not a stranger"}</Typography>
+                            </Box>
+                            <Box>
+                                <Typography >Capture On: {data?.channelName}</Typography>
+                                <Typography >Capture At: {new Date(data?.timestamp).toLocaleString()}</Typography>
+                            </Box>
+                        </Grid>
+
+                    </Grid>
                     <Box display={"flex"} justifyContent="space-between" sx={{ width: "100%" }}>
                         <Button
                             sx={{
@@ -89,6 +130,7 @@ function Popup() {
                         </Button>
                     </Box>
                 </Box>
+
             </Modal>
         </div>
     )

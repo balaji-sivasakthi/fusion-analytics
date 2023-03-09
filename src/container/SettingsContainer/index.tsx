@@ -1,11 +1,12 @@
+import { Grid } from '@mui/material'
 import React from 'react'
-import Layout from '../../../layout'
+
 
 function Settings() {
   return (
-    <Layout>
-      <Settings/>
-    </Layout>
+    <Grid container>
+
+    </Grid>
   )
 }
 
