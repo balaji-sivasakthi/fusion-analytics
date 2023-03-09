@@ -5,53 +5,61 @@ import HeadCount from './HeadCount'
 import VechicleCard from './VechicleCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useDispatch, useSelector } from 'react-redux'
+import recentCaptureSlice, { fetchRecentCaptures, recentAction } from '../../../redux/surveillance/recentCaptureSlice'
+import { AppDispatch } from '../../../redux/store'
+import Popup from '../../Popup'
+
+interface data {
+  loading: true | false
+  data: []
+  error: string
+}
+
 function RecentCard() {
-  const [data, setdata] = useState([])
-  const getData=()=>{
-    axios.get('http://192.168.0.134:5456/api/get')
-    .then(result=>{
-      console.log(result.data.data);
-      setdata(result.data.data.alertsEvent)
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-  }
 
+  const { loading, data, error }:data = useSelector((state: any) => state.recentCaptures)
+  const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
-  getData()
-  }, [])
-  
+    dispatch(fetchRecentCaptures())
+  }, [dispatch])
+  console.log("[RECENT CARDS STATE]", data);
+
   return (
-    <Card  sx={{height:"725px"}}>
-    <CardHeader title="Recent Captures">
-    </CardHeader>
-    <CardContent style={{alignItems:"start"}}>
-       
-        <Typography></Typography>
+    <>
+      {!loading && data?.length ? (
+        <Card sx={{ height: "725px" }}>
+          <CardHeader title="Recent Captures">
+          </CardHeader>
+          <CardContent style={{ alignItems: "start" }}>
 
-    <List sx={{ width: '100%',
-        
-        bgcolor: 'background.paper',
-        // position: 'relative',
-        overflow: 'auto',
-        maxHeight: "620px",
-        "::-webkit-scrollbar":{
-          display:"none"
-        },
-        '& ul': { padding: 0 },  }}>
+            <Typography></Typography>
 
-    {data?.map(result=>(
-          
-          <HeadCount data={result}/>
-      ))}
-  
-    </List>
-        {/* <HeadCount/>
-        <VechicleCard/> */}
-        
-    </CardContent>  
-</Card>
+            <List sx={{
+              width: '100%',
+
+              bgcolor: 'background.paper',
+              // position: 'relative',
+              overflow: 'auto',
+              maxHeight: "620px",
+              "::-webkit-scrollbar": {
+                display: "none"
+              },
+              '& ul': { padding: 0 },
+            }}>
+
+              {data?.map((result) => (
+
+                <HeadCount data={result} />
+              ))}
+
+            </List>
+            <Popup/>
+           {/* <VechicleCard/> */}
+          </CardContent>
+        </Card>
+      ):<div>Loading...</div>}
+    </>
   )
 }
 
